@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <title>Facebook Video Downloader</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="asset/app.css">
+       <!-- font -->
+       <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+
+<style>
+    .linkss{
+        color: white;
+    }
+
+/* unvisited link */
+a:link {
+  color: rgb(255, 255, 255);
+}
+
+/* visited link */
+a:visited {
+  color: rgb(255, 255, 255);
+}
+
+/* mouse over link */
+a:hover {
+color: yellow;
+  font-size: 130%;
+
+}
+
+/* selected link */
+a:active {
+  color: yellow;
+}
+
+
+.img-fluid{
+    height: 100px;
+    width: 700px;
+    position: relative;
+    display: flex;
+    margin-bottom: -30px;;
+}
+
+@media only screen and (max-width: 600px) {
+  .img-fluid {
+
+      height: auto;
+      padding-bottom: 20px;
+         margin-bottom: -10px;
+    
+  }
+}
+
+@media only screen and (max-width: 757px) {
+  .img-fluid {
+
+      height: auto;
+      padding-bottom: 20px;
+    
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .display-4 {
+
+     font-size: 32px;
+    
+  }
+}
+body{
+  font-family: 'Lato', sans-serif;
+
+}
+
+</style>
+
+</head>
+
+<body class="d-flex flex-column h-100">
+ 
+
+
+
+    <nav style="background-color: blue;   box-shadow: -1px 10px 5px #aaaaaa; " class="navbar navbar-expand-lg navbar-light">
+        <a style="color: white; font-weight: bold; " class="navbar-brand" href="#">Facebook Video Downloader</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul style="position: relative; " style="float: right;" class="navbar-nav">
+            <li style="padding-right: 30px; padding-left: 10px;" class="nav-item">
+              <a style="text-decoration: none;" class="linkss" class="nav-link" href="#">YouTube Video Downloader</a>
+            </li>
+            <li  style="padding-right: 30px;" class="nav-item">
+              <a  style="text-decoration: none;" class="linkss"class="nav-link" href="#">Instagram Video Downloader</a>
+            </li>
+
+            <li  style="padding-right: 30px;" class="nav-item">
+                <a  style="text-decoration: none;" class="linkss"class="nav-link" href="#">Vimeo Video Downloader</a>
+              </li>
+
+    
+              
+
+            <li  style="padding-right: 30px;" class="nav-item dropdown">
+              <a  style="text-decoration: none;" class="linkss"class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a style="color:black" class="dropdown-item" href="#">Twitter Video Downloader</a>
+                <a style="color:black"  class="dropdown-item" href="#">Linkedin Video Downloader</a>
+                <a style="color:black"  class="dropdown-item" href="#">Pinterest Video Downloader</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+<br>
+
+
+<!---Ads code-->
+
+<center><div class="container">
+<a target="_blank" href="https://youtube.com/t4technology09"><img src="asset/ads.png" class="img-fluid" alt="Responsive image"></a>
+
+
+</div></center>
+</div>
+
+
+
+
+
+
+
+
+        
+    </div>
+    <main role="main" class="flex-shrink-0">
+        <div  class="container">
+            <div class="title px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                <h1 class="display-4">Facebook Video Downloader</h1>
+            </div>
+            <div class="input-group">
+                <label class="sr-only" for="link">Facebook Video URL</label>
+                <input type="text" class="form-control mb-2 mr-sm-2" id="link" placeholder="Facebook Video Link"
+                    name="link">
+                <span class="input-group-btn">
+                    <input type="button" name="download" id="download" value="Download!" class="btn btn-primary"
+                        data-disable-with="Search" onclick="getDownloadLink();">
+                </span>
+            </div>
+            <div id="bar" style="display:none;">
+                <p style="padding-top: 10px;" class="text-center"><img src="asset/loading.gif"></p>
+            </div>
+            <div class="mt-3" id="result" style="display: none;">
+                <div id="downloadUrl">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex p-2 bg-primary text-white">Title</div>
+                            <div class="d-flex p-2 bg-dark text-white" id="title"></div>
+                        </div>
+                        <div class="col-md-12 mt-1">
+                            <div class="d-flex p-2 bg-primary text-white">Source</div>
+                            <div class="d-flex p-2 bg-dark text-white" id="source"></div>
+                        </div>
+                        <div class="col-md-12 mt-1">
+                            <div class="d-flex p-2 bg-primary text-white">Download Links:</div>
+                            <div class="p-2 bg-dark text-break" id="links"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+<script>
+ 
+
+// Code By Webdevtrick ( https://webdevtrick.com )
+const _ = e => document.querySelector(e);
+const render = _('.result');
+
+
+// create video
+const createVideo = data => {
+  let v = document.createElement('video');
+  v.id = "instavideo";
+  v.src = data.content; 
+  v.controls = true;
+  v.autoplay = true;
+
+  // create info
+  let info = document.createElement('p');
+  info.textContent = "Click the right button on video and select save as.";
+
+  render.innerHTML = ""; 
+  render.appendChild(v);
+  render.appendChild(info);
+};
+// create image
+const createImg = data => {
+  // create image
+  let i = document.createElement('img');
+  i.id = "instaImg";
+  i.src = data.content;
+
+  // create info
+  let info = document.createElement('p');
+  info.textContent = "Click the right button on the image and select save image..";
+
+  render.innerHTML = ""; 
+  render.appendChild(i); 	
+  render.appendChild(info); 
+
+};
+
+// extract html
+const getMedia = () => {
+  render.innerHTML = "<div class='image-placeholder'></div>";
+  // get input value
+  let url = _('input').value;
+  if (url) {
+    fetch(url).
+    then(r => r.text()).
+    then(r => {
+      // render html
+      render.innerHTML = r;
+      // wait, find meta and create video or image
+      let w = setTimeout(() => {
+        let v = _('meta[property="og:video"]');
+        if (v) {
+          createVideo(v);
+        } else {
+          let img = _('meta[property="og:image"]');
+          if (img) {
+            createImg(img);
+          } else {
+            document.body.innerHTML = body;
+            alert('Error extracting Instagram image / video.');
+          };
+        }
+        clearTimeout(w);
+      }, 200);
+    });
+  } else {
+    _('input').setAttribute('placeholder', 'Invalid address, use a proper Insagram link');
+
+  }
+};
+
+
+
+</script>
+
+
+    
+</body>
+
+</html>
